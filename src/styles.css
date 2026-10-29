@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-bg: #080a0d;
+  --color-surface: #12171e;
+  --color-surface-2: #1b222c;
+  --color-fg: #e7eef4;
+  --color-muted: #8d9aaa;
+  --color-line: #2a3441;
+  --color-signal: #e2b340;
+  --color-conflict: #e24b4b;
+  --color-air: #7eb6ff;
+  --color-sea: #3dcaa5;
+  --color-base: #d7c4a3;
+  --color-quake: #e08a3c;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-signal) 35%, transparent);
+    color: var(--color-fg);
+  }
+}
+
+.meridian-map {
+  background: var(--color-bg);
+}
+
+.leaflet-container {
+  font-family: inherit;
+  background: var(--color-bg);
+}
+
+.leaflet-div-icon.ac-icon,
+.leaflet-div-icon.ac-icon.is-hot {
+  background: transparent;
+  border: 0;
+  color: var(--color-air);
+}
+
+.leaflet-div-icon.ac-icon.is-hot {
+  color: var(--color-signal);
+}
+
+.md-tip {
+  background: var(--color-surface) !important;
+  color: var(--color-fg) !important;
+  border: 1px solid var(--color-line) !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.4rem !important;
+}
+
+.md-tip::before {
+  border-top-color: var(--color-line) !important;
+}
+
+.leaflet-control-attribution {
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent) !important;
+  color: var(--color-muted) !important;
+  font-size: 0.65rem !important;
+  max-width: 70vw;
+}
+
+.leaflet-control-attribution a {
+  color: var(--color-muted) !important;
+}
+
+@media (max-width: 1023px) {
+  .leaflet-bottom {
+    margin-bottom: 4.5rem;
+  }
+}
+
+.live-dot {
+  animation: live-pulse 1.8s ease-out infinite;
+}
+
+@keyframes live-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-signal) 70%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot {
+    animation: none;
+  }
+}
+
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+.rho-grid {
+  display: grid;
+  grid-template-columns: 4.75rem repeat(var(--cols), minmax(3.6rem, 1fr));
+  gap: 1px;
+  background: var(--color-line);
+  border: 1px solid var(--color-line);
+}
+
+.rho {
+  display: grid;
+  min-height: 2rem;
+  place-items: center;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.rho-head {
+  background: var(--color-surface);
+  color: var(--color-muted);
+}
+
+.rho-flat {
+  background: var(--color-surface-2);
+  color: var(--color-muted);
+}
+
+.rho-na {
+  background: var(--color-bg);
+  color: var(--color-muted);
+}
+
+.rho-pos-1 {
+  background: color-mix(in srgb, var(--color-sea) 24%, var(--color-bg));
+}
+
+.rho-pos-2 {
+  background: color-mix(in srgb, var(--color-sea) 46%, var(--color-bg));
+}
+
+.rho-pos-3 {
+  background: color-mix(in srgb, var(--color-sea) 70%, var(--color-bg));
+  color: var(--color-bg);
+}
+
+.rho-neg-1 {
+  background: color-mix(in srgb, var(--color-conflict) 24%, var(--color-bg));
+}
+
+.rho-neg-2 {
+  background: color-mix(in srgb, var(--color-conflict) 46%, var(--color-bg));
+}
+
+.rho-neg-3 {
+  background: color-mix(in srgb, var(--color-conflict) 70%, var(--color-bg));
+  color: var(--color-bg);
+}

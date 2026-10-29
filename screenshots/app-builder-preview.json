@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "MERIDIAN — geopolityka na żywo",
+      "hasCanvas": false,
+      "bodyTextLen": 1946,
+      "bodyTextHash": "83cc14ffa201c8f9a422e0b9a740ce690fef95385e8e4d75e82d030f56fd50b8",
+      "bodyTextPrefix": "MERIDIAN na żywo Geopolityka, energia i ruch, który rusza cenami",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "MERIDIAN — geopolityka na żywo",
+      "hasCanvas": false,
+      "bodyTextLen": 133,
+      "bodyTextHash": "c4a0ee09a1c3d658e85ea56885c410b4bee7a8b72aa4c9f447f5dae9899b5f2f",
+      "bodyTextPrefix": "MERIDIAN na żywo Geopolityka, energia i ruch, który rusza cenami",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
